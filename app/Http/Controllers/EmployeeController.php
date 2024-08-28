@@ -8,6 +8,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class EmployeeController extends Controller
 {
+
   
     public function index()
     {
@@ -45,13 +46,13 @@ class EmployeeController extends Controller
         $data->update($validated);
 
         Alert::success('Success', 'Data Berhasil di Update');
-        return redirect('/Employee-backend');
+        return redirect('/employee-backend');
     }
 
     public function destroy(string $id)
     {
         Employee::destroy($id);
         Alert::success('Success', 'Data Berhasil di Hapus');
-        return redirect('/Employee-backend');
+        return redirect('/employee-backend');
     }
 }

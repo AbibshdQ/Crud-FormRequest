@@ -57,9 +57,9 @@
         </div>
 
         <div class="mb-2">
-            <label for="adress" class="form-label">adress</label>
-            <textarea class="form-control @error('adress') is-invalid @enderror" name="adress">{{ old('adress') }}</textarea>
-            @error('adress')
+            <label for="address" class="form-label">address</label>
+            <textarea class="form-control @error('address') is-invalid @enderror" name="address">{{ old('address') }}</textarea>
+            @error('address')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>

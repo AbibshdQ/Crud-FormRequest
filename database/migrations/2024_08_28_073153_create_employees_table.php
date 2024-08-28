@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('gender',10);
             $table->date('day_of_birth');
             $table->string('place_of_birth', 50);
-            $table->string('adress',100);
+            $table->string('address',100);
             $table->string('status', 25);
             $table->date('entry_date');
             // $table->unsignedInteger('id_jabatan'); // Merujuk ke kolom 'id' di tabel 'jabatans'

@@ -22,13 +22,13 @@ class EmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:25',
             'gender' => 'required|string',
             'day_of_birth' => 'required|date',
-            'place_of_birth' => 'required|string|max:255',
+            'place_of_birth' => 'required|string|max:75',
+            'address' => 'required|string|max:120',  // Pastikan 'address' termasuk di sini
             'status' => 'required|string',
             'entry_date' => 'required|date',
-            'address' => 'required|string|max:255',  // Pastikan 'address' termasuk di sini
         ];
     }
 }

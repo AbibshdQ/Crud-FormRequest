@@ -12,7 +12,7 @@ class Employee extends Model
         'gender',
         'day_of_birth',
         'place_of_birth',
-        'adress',
+        'address',
         'status',
         'entry_date'
     ];
