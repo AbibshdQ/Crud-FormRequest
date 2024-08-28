@@ -23,11 +23,13 @@ class EmployeeController extends Controller
     public function store(EmployeeRequest $request)
     {
         $validated = $request->validated();
+    
         Employee::create($validated);
-
+    
         Alert::success('Success', 'Data berhasil disimpan');
-        return redirect('/Employee-backend');
+        return redirect('/employee-backend');
     }
+    
 
     public function edit(string $id)
     {

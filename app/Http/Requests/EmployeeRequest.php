@@ -11,7 +11,7 @@ class EmployeeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class EmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'gender' => 'required|string',
+            'day_of_birth' => 'required|date',
+            'place_of_birth' => 'required|string|max:255',
+            'status' => 'required|string',
+            'entry_date' => 'required|date',
+            'address' => 'required|string|max:255',  // Pastikan 'address' termasuk di sini
         ];
     }
 }
