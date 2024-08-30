@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories\Pegawai;
+namespace App\Repositories\Employee;
 
 use LaravelEasyRepository\Implementations\Eloquent;
-use App\Models\Pegawai;
+use App\Models\Employee;
 
-class PegawaiRepositoryImplement extends Eloquent implements PegawaiRepository{
+class EmployeeRepositoryImplement extends Eloquent implements EmployeeRepository{
 
     /**
     * Model class to be used in this repository for the common methods inside Eloquent
@@ -14,7 +14,7 @@ class PegawaiRepositoryImplement extends Eloquent implements PegawaiRepository{
     */
     protected $model;
 
-    public function __construct(Pegawai $model)
+    public function __construct(Employee $model)
     {
         $this->model = $model;
     }

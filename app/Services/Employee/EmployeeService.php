@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\Pegawai;
+namespace App\Services\Employee;
 
 use LaravelEasyRepository\BaseService;
 
-interface PegawaiService extends BaseService{
+interface EmployeeService extends BaseService{
 
     // Write something awesome :)
 }

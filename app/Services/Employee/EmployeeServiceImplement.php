@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services\Pegawai;
+namespace App\Services\Employee;
 
 use LaravelEasyRepository\ServiceApi;
-use App\Repositories\Pegawai\PegawaiRepository;
+use App\Repositories\Employee\EmployeeRepository;
 
-class PegawaiServiceImplement extends ServiceApi implements PegawaiService{
+class EmployeeServiceImplement extends ServiceApi implements EmployeeService{
 
     /**
      * set title message api for CRUD
@@ -25,7 +25,7 @@ class PegawaiServiceImplement extends ServiceApi implements PegawaiService{
      */
      protected $mainRepository;
 
-    public function __construct(PegawaiRepository $mainRepository)
+    public function __construct(EmployeeRepository $mainRepository)
     {
       $this->mainRepository = $mainRepository;
     }

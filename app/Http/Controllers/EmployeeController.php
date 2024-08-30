@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeRequest;
 use App\Models\Employee;
+use Illuminate\Auth\Events\Validated;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class EmployeeController extends Controller
@@ -24,7 +25,8 @@ class EmployeeController extends Controller
     public function store(EmployeeRequest $request)
     {
         $validated = $request->validated();
-    
+        dd($validated);
+
         Employee::create($validated);
     
         Alert::success('Success', 'Data berhasil disimpan');
