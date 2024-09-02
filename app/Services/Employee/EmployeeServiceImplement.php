@@ -5,30 +5,62 @@ namespace App\Services\Employee;
 use LaravelEasyRepository\ServiceApi;
 use App\Repositories\Employee\EmployeeRepository;
 
-class EmployeeServiceImplement extends ServiceApi implements EmployeeService{
+class EmployeeServiceImplement extends ServiceApi implements EmployeeService {
 
-    /**
-     * set title message api for CRUD
-     * @param string $title
-     */
-     protected $title = "";
-     /**
-     * uncomment this to override the default message
-     * protected $create_message = "";
-     * protected $update_message = "";
-     * protected $delete_message = "";
-     */
+    protected $repository;
 
-     /**
-     * don't change $this->mainRepository variable name
-     * because used in extends service class
-     */
-     protected $mainRepository;
-
-    public function __construct(EmployeeRepository $mainRepository)
-    {
-      $this->mainRepository = $mainRepository;
+    public function __construct(EmployeeRepository $repository) {
+        $this->repository = $repository;
     }
 
-    // Define your custom methods :)
+    // Metode dari BaseService
+    public function find($id) {
+        return $this->repository->find($id);
+    }
+
+    public function findOrFail($id) {
+        return $this->repository->findOrFail($id);
+    }
+
+    public function all() {
+        return $this->repository->all();
+    }
+
+    public function create($data) {
+      return $this->repository->create($data);
+   }
+  
+
+    public function update($id, array $data) {
+        return $this->repository->update($id, $data);
+    }
+
+    public function delete($id) {
+        return $this->repository->delete($id);
+    }
+
+    public function destroy($id) {
+        return $this->repository->destroy($id);
+    }
+
+  
+    public function getAllEmployees() {
+        return $this->repository->getAll();
+    }
+
+    public function getEmployeeById($id) {
+        return $this->repository->findById($id);
+    }
+
+    public function createEmployee(array $data) {
+        return $this->repository->create($data);
+    }
+
+    public function updateEmployee($id, array $data) {
+        return $this->repository->update($id, $data);
+    }
+
+    public function deleteEmployee($id) {
+        return $this->repository->delete($id);
+    }
 }

@@ -3,57 +3,52 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeRequest;
-use App\Models\Employee;
-use Illuminate\Auth\Events\Validated;
+use App\Services\Employee\EmployeeService;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class EmployeeController extends Controller
 {
+    protected $employeeService;
 
-  
-    public function index()
-    {
-        $Employees = Employee::all();
-        return view('Employee.index', compact('Employees'));
+    public function __construct(EmployeeService $employeeService) {
+        $this->employeeService = $employeeService;
     }
 
-    public function create()
-    {
+    public function index() {
+        $employees = $this->employeeService->getAllEmployees();
+        return view('Employee.index', compact('employees'));
+    }
+
+    public function create() {
         return view('Employee.create');
     }
 
-    public function store(EmployeeRequest $request)
-    {
-        $validated = $request->validated();
-        dd($validated);
+    public function store(EmployeeRequest $request) {
 
-        Employee::create($validated);
-    
+        $validated = $request->validated();
+        $this->employeeService->createEmployee($validated);
+
         Alert::success('Success', 'Data berhasil disimpan');
         return redirect('/employee-backend');
     }
-    
 
-    public function edit(string $id)
-    {
-        return view('Employee.edit', [
-            'Employees' => Employee::find($id)
-        ]);
+    public function edit(string $id) {
+        $employee = $this->employeeService->getEmployeeById($id);
+        return view('Employee.edit', compact('employee'));
     }
 
-    public function update(EmployeeRequest $request, string $id)
-    {
-        $validated = $request->validated();
-        $data = Employee::findOrFail($id);
-        $data->update($validated);
+    public function update(EmployeeRequest $request, string $id) {
 
+        $validated = $request->validated();
+        $this->employeeService->updateEmployee($id, $validated);
+        
         Alert::success('Success', 'Data Berhasil di Update');
         return redirect('/employee-backend');
     }
 
-    public function destroy(string $id)
-    {
-        Employee::destroy($id);
+    public function destroy(string $id) {
+
+        $this->employeeService->deleteEmployee($id);
         Alert::success('Success', 'Data Berhasil di Hapus');
         return redirect('/employee-backend');
     }

@@ -7,14 +7,14 @@
                 class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2 text-center">Edit employee</h1>
             </div>
-            <form method="post" action="/employee-backend/{{ $Employees->id }}">
+            <form method="post" action="/employee-backend/{{ $employee->id }}">
                 @method('PUT')
                 @csrf
 
                 <div class="mb-2">
                     <label for="name" class="form-label">Nama employee</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                        value="{{ $Employees->name, old('name') }}">
+                        value="{{ $employee->name, old('name') }}">
                     @error('name')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -51,7 +51,7 @@
                 <div class="mb-2">
                     <label for="day_of_birth" class="form-label">Tanggal Lahir</label>
                     <input type="date" class="form-control @error('day_of_birth') is-invalid @enderror" name="day_of_birth"
-                        value="{{ $Employees->day_of_birth, old('day_of_birth') }}">
+                        value="{{ $employee->day_of_birth, old('day_of_birth') }}">
                     @error('day_of_birth')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -61,7 +61,7 @@
 
                 <div class="mb-2">
                     <label for="place_of_birth" class="form-label">Tempat Lahir</label>
-                    <textarea class="form-control @error('place_of_birth') is-invalid @enderror" name="place_of_birth">{{ $Employees->place_of_birth, old('place_of_birth') }}</textarea>
+                    <textarea class="form-control @error('place_of_birth') is-invalid @enderror" name="place_of_birth">{{ $employee->place_of_birth, old('place_of_birth') }}</textarea>
                     @error('place_of_birth')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -71,7 +71,7 @@
 
                 <div class="mb-2">
                     <label for="address" class="form-label">address</label>
-                    <textarea class="form-control @error('address') is-invalid @enderror" name="address">{{ $Employees->address, old('address') }}</textarea>
+                    <textarea class="form-control @error('address') is-invalid @enderror" name="address">{{ $employee->address, old('address') }}</textarea>
                     @error('address')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -105,7 +105,7 @@
                 <div class="mb-2">
                     <label for="entry_date" class="form-label">Tanggal Masuk</label>
                     <input type="date" class="form-control @error('entry_date') is-invalid @enderror" name="entry_date"
-                        value="{{ $Employees->entry_date, old('entry_date') }}">
+                        value="{{ $employee->entry_date, old('entry_date') }}">
                     @error('entry_date')
                         <div class="invalid-feedback">
                             {{ $message }}

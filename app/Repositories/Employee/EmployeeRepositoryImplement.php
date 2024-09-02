@@ -2,22 +2,44 @@
 
 namespace App\Repositories\Employee;
 
-use LaravelEasyRepository\Implementations\Eloquent;
 use App\Models\Employee;
 
-class EmployeeRepositoryImplement extends Eloquent implements EmployeeRepository{
+class EmployeeRepositoryImplement implements EmployeeRepository {
 
-    /**
-    * Model class to be used in this repository for the common methods inside Eloquent
-    * Don't remove or change $this->model variable name
-    * @property Model|mixed $model;
-    */
-    protected $model;
-
-    public function __construct(Employee $model)
-    {
-        $this->model = $model;
+    public function getAll() {
+        return Employee::all();
     }
 
-    // Write something awesome :)
+    public function findById($id) {
+        return Employee::find($id);
+    }
+
+    public function find($id) {
+        return Employee::find($id);
+    }
+
+    public function findOrFail($id) {
+        return Employee::findOrFail($id);
+    }
+
+    public function all() {
+        return Employee::all();
+    }
+
+    public function create(array $data) {
+        return Employee::create($data);
+    }
+
+    public function update($id, array $data) {
+        $employee = Employee::findOrFail($id);
+        return $employee->update($data);
+    }
+
+    public function delete($id) {
+        return Employee::destroy($id);
+    }
+
+    public function destroy($id) {
+        return Employee::destroy($id);
+    }
 }
