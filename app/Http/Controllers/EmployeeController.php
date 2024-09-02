@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeRequest;
 use App\Services\Employee\EmployeeService;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
@@ -24,7 +24,6 @@ class EmployeeController extends Controller
     }
 
     public function store(EmployeeRequest $request) {
-
         $validated = $request->validated();
         $this->employeeService->createEmployee($validated);
 
@@ -38,7 +37,6 @@ class EmployeeController extends Controller
     }
 
     public function update(EmployeeRequest $request, string $id) {
-
         $validated = $request->validated();
         $this->employeeService->updateEmployee($id, $validated);
         
@@ -47,7 +45,6 @@ class EmployeeController extends Controller
     }
 
     public function destroy(string $id) {
-
         $this->employeeService->deleteEmployee($id);
         Alert::success('Success', 'Data Berhasil di Hapus');
         return redirect('/employee-backend');

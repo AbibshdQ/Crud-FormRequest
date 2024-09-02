@@ -1,124 +1,153 @@
-   {{-- <!-- Sidebar -->
-   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<body class="bg-body">
+    <div class="backdrop" id="backdrop"></div>
+    @include('layouts.navbar')
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+    <nav class="sidebar sidebar-mini sticky-top" id="sidebar">
+        <div class="menu shadow pb-5" id="sidebar-scroll">
+            <ul class="menu-wrapper">
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/dashboard" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Beranda" data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i data-feather="home" class="fa-fw"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li>
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/profile" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Profil Saya" data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i data-feather="user" class="fa-fw"></i>
+                        <span>Profil Saya</span>
+                    </a>
+                </li>
+                <div class="ps-3 text-muted menu-title">
+                    <small>Main Menu</small>
+                </div>
+                <li class="menu-item ripple show" data-mdb-placement="right" data-mdb-toggle="tooltip"
+                    title="Master Data" data-mdb-delay='{"show":"350", "hide":"0"}'>
+                    <a data-mdb-toggle="collapse" href="#collapseMenu3" role="button" aria-expanded="false"
+                        aria-controls="collapseMenu3">
+                        <i data-feather="database" class="fa-fw"></i>
+                        <span>Master Data</span>
+                    </a>
+                </li>
+
+                <div class="collapse show" id="collapseMenu3">
+                    <ul class="p-0 m-0">
+                        <li class="menu-item ripple">
+                            <a href="https://inovindoacademy.com/admin/education" data-mdb-placement="right"
+                                data-mdb-toggle="tooltip" title="Sekolah" data-mdb-delay='{"show":"350", "hide":"0"}'
+                                class="sub-item">
+                                <i class="far fa-building fa-fw"></i>
+                                <span>Sekolah</span>
+                            </a>
+                        </li>
+                        <li class="menu-item ripple active">
+                            <a href="https://inovindoacademy.com/admin/departments" data-mdb-placement="right"
+                                data-mdb-toggle="tooltip" title="Jurusan" data-mdb-delay='{"show":"350", "hide":"0"}'
+                                class="sub-item">
+                                <i data-feather="grid" class="fa-fw"></i>
+                                <span>Jurusan</span>
+                            </a>
+                        </li>
+                        <li class="menu-item ripple">
+                            <a href="https://inovindoacademy.com/admin/grade-templates" data-mdb-placement="right"
+                                data-mdb-toggle="tooltip" title="Format Nilai"
+                                data-mdb-delay='{"show":"350", "hide":"0"}' class="sub-item">
+                                <i data-feather="clipboard" class="fa-fw"></i>
+                                <span>Format Nilai</span>
+                            </a>
+                        </li>
+                        <li class="menu-item ripple">
+                            <a href="https://inovindoacademy.com/admin/internship-schedule" data-mdb-placement="right"
+                                data-mdb-toggle="tooltip" title="Jadwal Peserta"
+                                data-mdb-delay='{"show":"350", "hide":"0"}' class="sub-item">
+                                <i class="bi bi-bookmark-check"></i>
+                                <span>Jadwal Peserta</span>
+                            </a>
+                        </li>
+                        <li class="menu-item ripple">
+                            <a href="https://inovindoacademy.com/admin/internship-jamkerja" data-mdb-placement="right"
+                                data-mdb-toggle="tooltip" title="Jam Kerja" data-mdb-delay='{"show":"350", "hide":"0"}'
+                                class="sub-item">
+                                <i class="bi bi-alarm"></i>
+                                <span>Jam Kerja</span>
+                            </a>
+                        </li>
+                        <li class="menu-item ripple">
+                            <a href="https://inovindoacademy.com/admin/holidays" data-mdb-placement="right"
+                                data-mdb-toggle="tooltip" title="Hari Libur" data-mdb-delay='{"show":"350", "hide":"0"}'
+                                class="sub-item">
+                                <i data-feather="calendar" class="fa-fw"></i>
+                                <span>Hari Libur</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ps-3 text-muted menu-title">
+                    <small>Kelola Peserta Magang</small>
+                </div>
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/internship-requests" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Pengajuan" data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i data-feather="send" class="fa-fw"></i>
+                        <span>Pengajuan</span>
+                    </a>
+                </li>
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/internships" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Peserta" data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i data-feather="users" class="fa-fw"></i>
+                        <span>Peserta</span>
+                    </a>
+                </li>
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/grades" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Penilaian" data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i data-feather="feather" class="fa-fw"></i>
+                        <span>Penilaian</span>
+                    </a>
+                </li>
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/internship-projects" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Manajemen Tugas"
+                        data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i data-feather="briefcase" class="fa-fw"></i>
+                        <span>Manajemen Tugas</span>
+                    </a>
+                </li>
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/internship-presensi" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Monitoring Kehadiran"
+                        data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i class="bi bi-geo-alt-fill fa-fw"></i>
+                        <span>Monitoring Kehadiran</span>
+                    </a>
+                </li>
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/certificates" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Sertifikat" data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i data-feather="award" class="fa-fw"></i>
+                        <span>Sertifikat</span>
+                    </a>
+                </li>
+                <li class="menu-item ripple">
+                    <a href="https://inovindoacademy.com/admin/internship-feedback" data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="Feedback Pemagang"
+                        data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i class="bi bi-chat-heart fa-fw"></i>
+                        <span>Feedback Pemagang</span>
+                    </a>
+                </li>
+                <div class="ps-3 text-muted menu-title">
+                    <small>Pengaturan</small>
+                </div>
+                <li class="menu-item ripple">
+                    <a href="#" data-mdb-placement="right" data-mdb-toggle="tooltip" title="Pengaturan"
+                        data-mdb-delay='{"show":"350", "hide":"0"}'>
+                        <i data-feather="settings" class="fa-fw"></i>
+                        <span>Pengaturan</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-    </a>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Interface
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Components</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Addons
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-            aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-
-    <!-- Sidebar Message -->
-    <div class="sidebar-card d-none d-lg-flex">
-        <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-        <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-        <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-    </div>
-
-</ul>
-<!-- End of Sidebar --> --}}
+    </nav>

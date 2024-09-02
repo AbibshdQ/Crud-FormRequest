@@ -3,9 +3,9 @@
 use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/addEmployee', function () {
+    return view('layouts.form');
+});
 
 Route::resource('/', EmployeeController::class);
 
