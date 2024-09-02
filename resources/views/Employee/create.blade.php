@@ -6,16 +6,16 @@
     <div class="container-fluid">
         <section>
             <div class="py-2 mb-4">
-                <h1>Tambah Karyawan</h1>
+                <h1>Tambah Employee</h1>
                 <!-- Breadcrumb -->
                 <nav class="d-flex">
                     <h6 class="mb-0">
                         <a href="{{ route('employee.index') }}" class="text-reset">Beranda</a>
                         <span>/</span>
-                        <a href="{{ route('employee.index') }}" class="text-reset">Karyawan</a>
+                        <a href="{{ route('employee.index') }}" class="text-reset">Employee</a>
                         <span>/</span>
                         <a href="{{ route('employee.create') }}" class="text-reset text-muted">
-                            <u>Tambah Karyawan</u>
+                            <u>Tambah Employee</u>
                         </a>
                     </h6>
                 </nav>
