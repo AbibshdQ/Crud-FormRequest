@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
+     /**
      * Run the migrations.
      */
     public function up(): void
@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('address', 100);
             $table->string('status', 25);
             $table->date('entry_date');
-            $table->unsignedBigInteger('office_id');  
+            $table->unsignedBigInteger('office_id'); // Kolom untuk foreign key ke tabel offices
             $table->timestamps();
 
-         
+            // Menambahkan foreign key constraint
             $table->foreign('office_id')->references('id')->on('offices')->onDelete('cascade');
         });
     }

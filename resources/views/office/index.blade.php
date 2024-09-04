@@ -6,13 +6,13 @@
     <div class="container-fluid">
         <section>
             <div class="py-2 mb-4">
-                <h1 class="">{{ ('Employee') }}</h1>
+                <h1>Office</h1>
                 <!-- Breadcrumb -->
                 <nav class="d-flex">
                     <h6 class="mb-0">
-                        <a href="" class="text-reset">{{ ('Home') }}</a>
+                        <a href="{{ route('office.index') }}" class="text-reset">Home</a>
                         <span>/</span>
-                        <a href="" class="text-reset"><u>{{ ('Employee') }}</u></a>
+                        <a href="{{ route('office.index') }}" class="text-reset"><u>Office</u></a>
                     </h6>
                 </nav>
                 <!-- Breadcrumb -->
@@ -21,8 +21,8 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{ route('employee-backend.create') }}" class="btn btn-primary">
-                                {{ ('Add') }}
+                            <a href="{{ route('office.create') }}" class="btn btn-primary">
+                                Add
                             </a>
                         </div>
                         <div class="card-body">
@@ -30,35 +30,23 @@
                                 <table id="datatable-server" class="table table-hover table-striped nowrap" style="width: 100%">
                                     <thead>
                                         <tr>
-                                            <th>{{ ('No') }}</th>
-                                            <th>{{ ('Name') }}</th>
-                                            <th>{{ ('Gender') }}</th>
-                                            <th>{{ ('Date of Birth') }}</th>
-                                            <th>{{ ('Place of Birth') }}</th>
-                                            <th>{{ ('Address') }}</th>
-                                            <th>{{ ('Status') }}</th>
-                                            <th>{{ ('Entry Date') }}</th>
-                                            <th>{{ ('Office Name') }}</th> <!-- Tambahkan kolom Office Name -->
-                                            <th>{{ ('Actions') }}</th>
+                                            <th>No</th>
+                                            <th>Office Name</th>
+                                            <th>Office Address</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($employees as $index => $employee)
+                                        @foreach ($offices as $index => $office)
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
-                                            <td>{{ $employee->name }}</td>
-                                            <td>{{ $employee->gender }}</td>
-                                            <td>{{ $employee->day_of_birth }}</td>
-                                            <td>{{ $employee->place_of_birth }}</td>
-                                            <td>{{ $employee->address }}</td>
-                                            <td>{{ $employee->status }}</td>
-                                            <td>{{ $employee->entry_date }}</td>
-                                            <td>{{ $employee->office->office_name }}</td> <!-- Menampilkan Office Name -->
+                                            <td>{{ $office->office_name }}</td>
+                                            <td>{{ $office->office_address }}</td>
                                             <td>
-                                                <a href="{{ route('employee-backend.edit', $employee->id) }}" class="btn btn-warning btn-sm">
+                                                <a href="{{ route('office.edit', $office->id) }}" class="btn btn-warning btn-sm">
                                                     Edit
                                                 </a>
-                                                <form action="{{ route('employee-backend.destroy', $employee->id) }}" method="POST" style="display: inline;">
+                                                <form action="{{ route('office.destroy', $office->id) }}" method="POST" style="display: inline;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">

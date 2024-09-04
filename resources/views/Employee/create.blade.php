@@ -149,6 +149,24 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
+
+                                        <div class="form-group mb-3">
+                                            <label class="form-label" for="office_id">Office
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <select id="office_id" name="office_id" class="form-control">
+                                                @foreach($offices as $office)
+                                                    <option value="{{ $office->id }}" {{ old('office_id') == $office->id ? 'selected' : '' }}>
+                                                        {{ $office->office_name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @error('office_id')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        
+
                                     </div>
                                 </div>
                             </div>

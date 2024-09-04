@@ -145,11 +145,34 @@
                                                 value="{{ old('entry_date', $employee->entry_date) }}"
                                             />
                                         </div>
+
+                                        <!-- Office Selection -->
+                                        <div class="form-group mb-3">
+                                            <label class="form-label" for="office_id">
+                                                {{ __('Office') }}
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <select
+                                                id="office_id"
+                                                name="office_id"
+                                                class="form-control"
+                                            >
+                                                @foreach($offices as $office)
+                                                    <option value="{{ $office->id }}" {{ old('office_id', $employee->office_id) == $office->id ? 'selected' : '' }}>
+                                                        {{ $office->office_name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @error('office_id')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <!-- End Office Selection -->
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-primary">{{ __('Update') }}</button>
+                                <button type="submit" class="btn btn-primary">{{ __('Update') }} </button>
                             </div>
                         </div>
                     </form>

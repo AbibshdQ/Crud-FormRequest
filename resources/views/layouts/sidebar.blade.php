@@ -33,52 +33,20 @@
 
                 <div class="collapse show" id="collapseMenu3">
                     <ul class="p-0 m-0">
-                        <li class="menu-item ripple">
-                            <a href="https://inovindoacademy.com/admin/education" data-mdb-placement="right"
-                                data-mdb-toggle="tooltip" title="Sekolah" data-mdb-delay='{"show":"350", "hide":"0"}'
-                                class="sub-item">
-                                <i class="far fa-building fa-fw"></i>
-                                <span>Sekolah</span>
-                            </a>
-                        </li>
                         <li class="menu-item ripple active">
-                            <a href="https://inovindoacademy.com/admin/departments" data-mdb-placement="right"
-                                data-mdb-toggle="tooltip" title="Jurusan" data-mdb-delay='{"show":"350", "hide":"0"}'
+                            <a href="{{ route('employee-backend.index') }}" data-mdb-placement="right"
+                                data-mdb-toggle="tooltip" title="Karyawan" data-mdb-delay='{"show":"350", "hide":"0"}'
                                 class="sub-item">
                                 <i data-feather="grid" class="fa-fw"></i>
-                                <span>Jurusan</span>
+                                <span>Karyawan</span>
                             </a>
                         </li>
                         <li class="menu-item ripple">
-                            <a href="https://inovindoacademy.com/admin/grade-templates" data-mdb-placement="right"
-                                data-mdb-toggle="tooltip" title="Format Nilai"
-                                data-mdb-delay='{"show":"350", "hide":"0"}' class="sub-item">
-                                <i data-feather="clipboard" class="fa-fw"></i>
-                                <span>Format Nilai</span>
-                            </a>
-                        </li>
-                        <li class="menu-item ripple">
-                            <a href="https://inovindoacademy.com/admin/internship-schedule" data-mdb-placement="right"
-                                data-mdb-toggle="tooltip" title="Jadwal Peserta"
-                                data-mdb-delay='{"show":"350", "hide":"0"}' class="sub-item">
-                                <i class="bi bi-bookmark-check"></i>
-                                <span>Jadwal Peserta</span>
-                            </a>
-                        </li>
-                        <li class="menu-item ripple">
-                            <a href="https://inovindoacademy.com/admin/internship-jamkerja" data-mdb-placement="right"
-                                data-mdb-toggle="tooltip" title="Jam Kerja" data-mdb-delay='{"show":"350", "hide":"0"}'
+                            <a href="{{ route('office-backend.index') }}" data-mdb-placement="right"
+                                data-mdb-toggle="tooltip" title="Kantor" data-mdb-delay='{"show":"350", "hide":"0"}'
                                 class="sub-item">
-                                <i class="bi bi-alarm"></i>
-                                <span>Jam Kerja</span>
-                            </a>
-                        </li>
-                        <li class="menu-item ripple">
-                            <a href="https://inovindoacademy.com/admin/holidays" data-mdb-placement="right"
-                                data-mdb-toggle="tooltip" title="Hari Libur" data-mdb-delay='{"show":"350", "hide":"0"}'
-                                class="sub-item">
-                                <i data-feather="calendar" class="fa-fw"></i>
-                                <span>Hari Libur</span>
+                                <i class="far fa-building fa-fw"></i>
+                                <span>Kantor</span>
                             </a>
                         </li>
                     </ul>
