@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 class OfficeRepositoryImplement implements OfficeRepository {
 
     public function getAll(): Collection {
-        return Office::all(); // Mengembalikan koleksi model
+        return Office::all(); 
     }
 
     public function findById($id): ?Office {

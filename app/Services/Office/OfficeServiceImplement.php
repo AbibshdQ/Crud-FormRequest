@@ -14,22 +14,22 @@ class OfficeServiceImplement extends ServiceApi implements OfficeService {
     }
 
     public function getAllOffices() {
-        return $this->repository->getAll(); // Menggunakan getAll() dari OfficeRepository
+        return $this->repository->getAll();  
     }
 
     public function getOfficeById($id) {
-        return $this->repository->findById($id); // Menggunakan findById() dari OfficeRepository
+        return $this->repository->findById($id);  
     }
 
     public function createOffice(array $data) {
-        return $this->repository->create($data); // Menggunakan create() dari OfficeRepository
+        return $this->repository->create($data);  
     }
 
     public function updateOffice($id, array $data) {
-        return $this->repository->update($id, $data); // Menggunakan update() dari OfficeRepository
+        return $this->repository->update($id, $data);  
     }
 
     public function deleteOffice($id) {
-        return $this->repository->delete($id); // Menggunakan delete() dari OfficeRepository
+        return $this->repository->delete($id); 
     }
 }

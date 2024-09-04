@@ -29,7 +29,7 @@ class EmployeeRequest extends FormRequest
             'address' => 'required|string',
             'status' => 'required|string|max:255',
             'entry_date' => 'required|date',
-            'office_id' => 'required|exists:offices,id'  // Validasi office_id
+            'office_id' => 'required|exists:offices,id'  
         ];
     }
 }

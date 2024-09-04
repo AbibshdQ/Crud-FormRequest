@@ -13,22 +13,22 @@ class EmployeeServiceImplement extends ServiceApi implements EmployeeService {
     }
 
     public function getAllEmployees() {
-        return $this->repository->getAll(); // Menggunakan getAll() dari EmployeeRepository
+        return $this->repository->getAll();  
     }
 
     public function getEmployeeById($id) {
-        return $this->repository->findById($id); // Menggunakan findById() dari EmployeeRepository
+        return $this->repository->findById($id);  
     }
 
     public function createEmployee(array $data) {
-        return $this->repository->create($data); // Menggunakan create() dari EmployeeRepository
+        return $this->repository->create($data); 
     }
 
     public function updateEmployee($id, array $data) {
-        return $this->repository->update($id, $data); // Menggunakan update() dari EmployeeRepository
+        return $this->repository->update($id, $data);  
     }
 
     public function deleteEmployee($id) {
-        return $this->repository->delete($id); // Menggunakan delete() dari EmployeeRepository
+        return $this->repository->delete($id);  
     }
 }

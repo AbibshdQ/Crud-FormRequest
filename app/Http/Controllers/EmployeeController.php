@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeRequest;
 use App\Services\Employee\EmployeeService;
-use App\Services\Office\OfficeService; // pastikan OfficeService digunakan
+use App\Services\Office\OfficeService;  
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
@@ -24,7 +24,7 @@ class EmployeeController extends Controller
     }
 
     public function create() {
-        $offices = $this->officeService->getAllOffices();  // Menggunakan OfficeService untuk mendapatkan data office
+        $offices = $this->officeService->getAllOffices();   
         return view('employee.create', compact('offices'));
     }
 
@@ -39,7 +39,7 @@ class EmployeeController extends Controller
 
     public function edit(string $id) {
         $employee = $this->employeeService->getEmployeeById($id);
-        $offices = $this->officeService->getAllOffices();  // Menggunakan OfficeService untuk mendapatkan data office
+        $offices = $this->officeService->getAllOffices();   
         return view('employee.edit', compact('employee', 'offices'));
     }
 
