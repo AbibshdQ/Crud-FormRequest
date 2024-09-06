@@ -14,12 +14,17 @@ class Employee extends Model
         'place_of_birth', 'address', 
         'status', 
         'entry_date',
-         'office_id'
+        'office_id'
     ];
 
      
     public function office()
     {
         return $this->belongsTo(Office::class);
+    }
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class, 'employee_project');
     }
 }

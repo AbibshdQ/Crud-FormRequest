@@ -165,6 +165,19 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
+
+                                        {{-- <div class="form-group">
+                                            <label for="projects">Projects</label>
+                                            <select name="projects[]" id="projects" class="form-control" multiple>
+                                                @foreach($projects as $project)
+                                                    <option value="{{ $project->id }}"
+                                                        @if(isset($employee) && $employee->projects->contains($project->id)) selected @endif>
+                                                        {{ $project->project_name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div> --}}
+                                        
                                         
 
                                     </div>

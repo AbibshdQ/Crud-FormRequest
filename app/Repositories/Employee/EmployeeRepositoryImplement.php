@@ -19,12 +19,24 @@ class EmployeeRepositoryImplement implements EmployeeRepository {
     }
 
     public function create(array $data) {
-        return Employee::create($data);
+        $employee = Employee::create($data);
+    
+        if (isset($data['projects'])) {
+            $employee->projects()->attach($data['projects']);
+        }
+    
+        return $employee;
     }
-
-    public function update($id, array $data): bool {
+    
+    public function update($id, array $data) {
         $employee = Employee::findOrFail($id);
-        return $employee->update($data);
+        $employee->update($data);
+    
+        if (isset($data['projects'])) {
+            $employee->projects()->sync($data['projects']);
+        }
+    
+        return $employee;
     }
 
     public function delete($id): bool {

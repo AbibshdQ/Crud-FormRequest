@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OfficeRequest;
 use App\Services\Office\OfficeService;
+use App\Services\Office\OfficeServiceImplement;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class OfficeController extends Controller
 {
     protected $officeService;
 
-    public function __construct(OfficeService $officeService) {
+    public function __construct(OfficeServiceImplement $officeService) {
         $this->officeService = $officeService;
     }
 

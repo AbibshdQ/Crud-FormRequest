@@ -49,6 +49,32 @@
                                 <span>Kantor</span>
                             </a>
                         </li>
+                        <li class="menu-item ripple">
+                            <a
+                              href="{{ route('project-backend.index') }}"
+                              data-mdb-placement="right"
+                              data-mdb-toggle="tooltip"
+                              title="Proyek"
+                              data-mdb-delay='{"show":"350", "hide":"0"}'
+                              class="sub-item"
+                            >
+                              <i data-feather="calendar" class="fa-fw"></i>
+                              <span>Proyek</span>
+                            </a>
+                          </li>
+                          <li class="menu-item ripple">
+                            <a
+                              href="{{ route('project-employee.index') }}"
+                              data-mdb-placement="right"
+                              data-mdb-toggle="tooltip"
+                              title="Proyek Karyawan"
+                              data-mdb-delay='{"show":"350", "hide":"0"}'
+                              class="sub-item"
+                            >
+                              <i class="bi bi-bookmark-check"></i>
+                              <span>Proyek Karyawan</span>
+                            </a>
+                          </li>
                     </ul>
                 </div>
                 <div class="ps-3 text-muted menu-title">

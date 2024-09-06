@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->increments('id'); 
+            $table->bigIncrements('id');  
             $table->string('name', 50);
             $table->string('gender', 10);
             $table->date('day_of_birth');
@@ -22,10 +22,10 @@ return new class extends Migration
             $table->date('entry_date');
             $table->unsignedBigInteger('office_id');  
             $table->timestamps();
-
-         
+        
             $table->foreign('office_id')->references('id')->on('offices')->onDelete('cascade');
         });
+        
     }
 
     /**

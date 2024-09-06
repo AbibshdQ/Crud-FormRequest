@@ -4,12 +4,13 @@ namespace App\Services\Office;
 
 use LaravelEasyRepository\ServiceApi;
 use App\Repositories\Office\OfficeRepository;
+use App\Repositories\Office\OfficeRepositoryImplement;
 
 class OfficeServiceImplement extends ServiceApi implements OfficeService {
 
     protected $repository;
 
-    public function __construct(OfficeRepository $repository) {
+    public function __construct(OfficeRepositoryImplement $repository) {
         $this->repository = $repository;
     }
 

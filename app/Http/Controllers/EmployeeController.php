@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeRequest;
 use App\Services\Employee\EmployeeService;
-use App\Services\Office\OfficeService;  
+use App\Services\Employee\EmployeeServiceImplement;
+use App\Services\Office\OfficeService;
+use App\Services\Office\OfficeServiceImplement;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
@@ -13,19 +15,22 @@ class EmployeeController extends Controller
     protected $employeeService;
     protected $officeService;  
 
-    public function __construct(EmployeeService $employeeService, OfficeService $officeService) {
+    public function __construct(EmployeeServiceImplement $employeeService, OfficeServiceImplement $officeService) {
         $this->employeeService = $employeeService;
         $this->officeService = $officeService;  
     }
 
     public function index() {
         $employees = $this->employeeService->getAllEmployees();
+      
+
         return view('employee.index', compact('employees'));
     }
 
     public function create() {
+        $employees = $this->employeeService->getAllEmployees();   
         $offices = $this->officeService->getAllOffices();   
-        return view('employee.create', compact('offices'));
+        return view('employee.create', compact('employees', 'offices'));
     }
 
     public function store(EmployeeRequest $request) {
@@ -34,6 +39,7 @@ class EmployeeController extends Controller
     
         Alert::success('Success', 'Data berhasil disimpan');
         return redirect()->route('employee.index');
+        // return redirect()->back()->withErrors(['name' => 'Tes name']);
     }
     
 
@@ -46,7 +52,7 @@ class EmployeeController extends Controller
     public function update(EmployeeRequest $request, string $id) {
         $validated = $request->validated();
         $this->employeeService->updateEmployee($id, $validated);
-        
+    
         Alert::success('Success', 'Data Berhasil di Update');
         return redirect()->route('employee.index');
     }
