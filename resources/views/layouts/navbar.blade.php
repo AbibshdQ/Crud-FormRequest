@@ -1,32 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-4 fixed-top">
     <!-- Container wrapper -->
     <div class="container-fluid">
-        <button class="navbar-toggler bg-white border-0 mx-3" type="button" aria-expanded="false" id="toggleSidebar"
-            aria-controls="offcanvasScrolling">
+        <button class="navbar-toggler bg-white border-0 mx-3" type="button" aria-expanded="false" id="toggleSidebar" aria-controls="offcanvasScrolling">
             <i class="fa fa-bars"></i>
         </button>
 
-        <!-- Navbar brand -->
-
+       
         <a class="navbar-brand" href="#">
             <img src="https://inovindoacademy.com/assets/images/logo.png" class="logo" alt="logo" />
         </a>
 
         <div class="d-flex align-items-center">
-            <!--<div class="d-lg-none nav-item dropdown">
-          <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-bell"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">1</span>
-          </a>
-      </div>-->
-
-            <!-- Toggle button -->
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <img src="https://www.gamelab.id/uploads/members/75964/photo-ade-ridwan-75964.png" alt="cms"
-                    class="avatar rounded-circle" />
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="https://www.gamelab.id/uploads/members/75964/photo-ade-ridwan-75964.png" alt="cms" class="avatar rounded-circle" />
             </button>
         </div>
 
@@ -34,35 +20,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
-            <!-- Icons -->
+            <!-- User Menu Dropdown -->
             <ul class="navbar-nav d-flex align-items-center flex-row me-1">
-                <!-- Notification dropdown -->
-                <!-- <li class="nav-item dropdown">
-              <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
-                  id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                  <i class="fas fa-bell"></i>
-                  <span class="badge rounded-pill badge-notification bg-danger">1</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Some news</a></li>
-                  <li><a class="dropdown-item" href="#">Another news</a></li>
-                  <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-              </ul>
-          </li>-->
                 <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-mdb-toggle="dropdown" aria-expanded="false" data-mdb-offset="100,0">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false" data-mdb-offset="100,0">
                         <span class="me-2 text-muted">Selamat Pagi, Administrator</span>
                         <div class="d-inline-block">
                             <div class="d-flex justify-content-center align-items-center text-white rounded-circle"
-                                style="
-                width: 32px;
-                height: 32px;
-                background-color: #bf360c;
-                font-size: 0.85rem;
-              ">
+                                style="width: 32px; height: 32px; background-color: #bf360c; font-size: 0.85rem;">
                                 A
                             </div>
                         </div>
@@ -78,10 +43,15 @@
                             <hr class="dropdown-divider my-0" />
                         </li>
                         <li>
-                            <a class="dropdown-item" href="https://inovindoacademy.com/logout">
+                            <!-- Logout Button -->
+                            <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fas fa-power-off fa-fw me-2"></i>
                                 <span>Keluar</span>
                             </a>
+                            <!-- Logout Form -->
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </li>
@@ -90,4 +60,3 @@
     </div>
     <!-- Container wrapper -->
 </nav>
-<!-- Navbar -->

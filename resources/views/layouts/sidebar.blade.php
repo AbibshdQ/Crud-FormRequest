@@ -78,70 +78,18 @@
                     </ul>
                 </div>
                 <div class="ps-3 text-muted menu-title">
-                    <small>Kelola Peserta Magang</small>
+                    <small>Kelola User Magang</small>
                 </div>
+                
                 <li class="menu-item ripple">
-                    <a href="https://inovindoacademy.com/admin/internship-requests" data-mdb-placement="right"
-                        data-mdb-toggle="tooltip" title="Pengajuan" data-mdb-delay='{"show":"350", "hide":"0"}'>
-                        <i data-feather="send" class="fa-fw"></i>
-                        <span>Pengajuan</span>
-                    </a>
-                </li>
-                <li class="menu-item ripple">
-                    <a href="https://inovindoacademy.com/admin/internships" data-mdb-placement="right"
-                        data-mdb-toggle="tooltip" title="Peserta" data-mdb-delay='{"show":"350", "hide":"0"}'>
+                    <a href=" " data-mdb-placement="right"
+                        data-mdb-toggle="tooltip" title="User" data-mdb-delay='{"show":"350", "hide":"0"}'>
                         <i data-feather="users" class="fa-fw"></i>
-                        <span>Peserta</span>
+                        <span>User</span>
                     </a>
                 </li>
-                <li class="menu-item ripple">
-                    <a href="https://inovindoacademy.com/admin/grades" data-mdb-placement="right"
-                        data-mdb-toggle="tooltip" title="Penilaian" data-mdb-delay='{"show":"350", "hide":"0"}'>
-                        <i data-feather="feather" class="fa-fw"></i>
-                        <span>Penilaian</span>
-                    </a>
-                </li>
-                <li class="menu-item ripple">
-                    <a href="https://inovindoacademy.com/admin/internship-projects" data-mdb-placement="right"
-                        data-mdb-toggle="tooltip" title="Manajemen Tugas"
-                        data-mdb-delay='{"show":"350", "hide":"0"}'>
-                        <i data-feather="briefcase" class="fa-fw"></i>
-                        <span>Manajemen Tugas</span>
-                    </a>
-                </li>
-                <li class="menu-item ripple">
-                    <a href="https://inovindoacademy.com/admin/internship-presensi" data-mdb-placement="right"
-                        data-mdb-toggle="tooltip" title="Monitoring Kehadiran"
-                        data-mdb-delay='{"show":"350", "hide":"0"}'>
-                        <i class="bi bi-geo-alt-fill fa-fw"></i>
-                        <span>Monitoring Kehadiran</span>
-                    </a>
-                </li>
-                <li class="menu-item ripple">
-                    <a href="https://inovindoacademy.com/admin/certificates" data-mdb-placement="right"
-                        data-mdb-toggle="tooltip" title="Sertifikat" data-mdb-delay='{"show":"350", "hide":"0"}'>
-                        <i data-feather="award" class="fa-fw"></i>
-                        <span>Sertifikat</span>
-                    </a>
-                </li>
-                <li class="menu-item ripple">
-                    <a href="https://inovindoacademy.com/admin/internship-feedback" data-mdb-placement="right"
-                        data-mdb-toggle="tooltip" title="Feedback Pemagang"
-                        data-mdb-delay='{"show":"350", "hide":"0"}'>
-                        <i class="bi bi-chat-heart fa-fw"></i>
-                        <span>Feedback Pemagang</span>
-                    </a>
-                </li>
-                <div class="ps-3 text-muted menu-title">
-                    <small>Pengaturan</small>
-                </div>
-                <li class="menu-item ripple">
-                    <a href="#" data-mdb-placement="right" data-mdb-toggle="tooltip" title="Pengaturan"
-                        data-mdb-delay='{"show":"350", "hide":"0"}'>
-                        <i data-feather="settings" class="fa-fw"></i>
-                        <span>Pengaturan</span>
-                    </a>
-                </li>
+                 
+                 
             </ul>
         </div>
     </nav>
